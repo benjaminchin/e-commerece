@@ -12,10 +12,10 @@ const Button = ({ children, products }: Props) => {
 
   return (
     <div>
-      {cartVisible && <Cart products={products}/>}  
+      {cartVisible && <Cart products={products} />}
       <button
-        className="cart btn btn-outline-success"
-        onClick={() => setCartVisibility(true)}
+        className="btn btn-outline-success"
+        onClick={() => setCartVisibility(!cartVisible)}
       >
         {children}
       </button>

@@ -60,3 +60,11 @@
 .details {
     padding: 10px;
 }
+
+.cart {
+    position:absolute;
+    z-index: 99;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

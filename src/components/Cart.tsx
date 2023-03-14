@@ -7,10 +7,10 @@ interface Props {
 
 const Cart = ({ products }: Props) => {
   const cart = products.map((item) => {
-    return <li key={item.props.id} className="list-group-item">{item.props.name}</li>;
+    return <li key={item.props.id} className="list-group-item">{item.props.name + item.props.price}</li>;
   });
 
-  return <ul className="list-group">{cart}</ul>;
+  return <ul className="cart list-group list-group-numbered">{cart}</ul>;
 };
 
 export default Cart;

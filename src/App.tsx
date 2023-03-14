@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import data from "./components/Products";
 import Card from "./components/Card";
-import Cart from "./components/Cart";
 
 const App = () => {
   const products = data.map((item) => {
