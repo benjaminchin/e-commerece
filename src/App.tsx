@@ -1,8 +1,12 @@
 import React from "react";
+import ReactDOM from "react-dom/client";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import data from "./components/Products";
 import Card from "./components/Card";
+import Home from "./components/Home";
+import Cart from "./components/Cart";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
   const products = data.map((item) => {
@@ -17,21 +21,21 @@ const App = () => {
       />
     );
   });
-  console.log(products[0].props.name);
 
-  
   return (
-    <div>
-      <Navbar 
-        products={products}
-      />
-      <Hero
-        img="tees.jpg"
-        text={"SALE: Up to 70% off select T-Shirts"}
-        code="Use code 'BENJAMIN' at checkout"
-      />
-      <div className="products">{products}</div>
-    </div>
+    <Router>
+      <div>
+        <Navbar products={products} />
+        <Switch>
+          <Route exact path="/">
+            <Home products={products} />
+          </Route>
+          <Route exact path="/cart">
+            <Cart products={products}/>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 };
 

@@ -61,10 +61,15 @@
     padding: 10px;
 }
 
-.cart {
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .cart {
     position:absolute;
     z-index: 99;
     top: 100px;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+} */
