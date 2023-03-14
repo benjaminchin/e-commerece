@@ -10,14 +10,23 @@
     text-align: center;
 }
 
-.promo-text {
+.promo-text ,
+.promo-code {
     position: absolute;
     color: #fff;
     font-size: 32pt;
     font-weight: 700;
-    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.promo-text {
+    top: 50%;
+}
+
+.promo-code {
+    top: 70%;
+    font-size: 16pt;
 }
 
 .promo-code {
@@ -31,7 +40,7 @@
     object-position: center center;
 }
 
-.product--name {
+.product-name {
     font-weight: 600;
 }
 

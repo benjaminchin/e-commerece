@@ -11,17 +11,22 @@ interface Props {
 const Card = ({ coverImg, name, price, rating, reviews }: Props) => {
   return (
     <div className="card">
-      <img className="product-img" src={coverImg} alt="product" />
-      <div className="details">
-        <div className="ratings">
+      <div className="card-body">
+        <img className="product-img" src={coverImg} alt="product" />
+        <div className="card-title">
           <span>
             <img src="./star-svgrepo-com.svg" height="20px" />
             {rating} •
           </span>
-          <span>{`(${reviews} Reviews)`}</span>
+
+          <span>{` (${reviews} Reviews)`}</span>
+
+          <p className="product-name">{name}</p>
+          <p>{`Price: ${price}`}</p>
+          <a href="#" className="btn btn-secondary">
+            Add to Cart
+          </a>
         </div>
-        <p className="product--name">{name}</p>
-        <p>{`Price: ${price}`}</p>
       </div>
     </div>
   );

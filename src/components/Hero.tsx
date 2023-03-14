@@ -1,11 +1,18 @@
 import React from "react";
 import hero_img from "../assets/tees.jpg";
 
-const Hero = () => {
+interface Props {
+  text: string;
+  img: string;
+  code?: string;
+}
+
+const Hero = ({ text, img, code }: Props) => {
   return (
     <div className="hero">
-      <img className="hero--img" src={hero_img} alt="hero img"></img>
-      <div className="promo-text">TEES<br></br>UP TO 70% OFF<br></br><span className="promo-code">Use code "BENJAMIN" at checkout</span></div>
+      <img className="hero--img" src={img} alt="hero img"></img>
+      <div className="promo-text">{text}</div>
+      <div className="promo-code">{code}</div>
     </div>
   );
 };

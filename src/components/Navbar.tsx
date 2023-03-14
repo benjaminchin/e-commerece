@@ -1,12 +1,17 @@
 import React from "react";
 import logo from "../assets/cart-svgrepo-com.svg";
+import Button from "./Button";
 
-const Navbar = () => {
+interface Props {
+    products: JSX.Element[];
+}
+
+const Navbar = ({products}: Props) => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img src={logo} width="50px"/>
+          <img src={logo} width="50px" />
         </a>
         <button
           className="navbar-toggler"
@@ -41,7 +46,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <button className="btn btn-outline-success">Cart</button>
+        <Button products={products}>Cart</Button>
       </div>
     </nav>
   );
