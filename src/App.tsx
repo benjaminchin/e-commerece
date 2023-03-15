@@ -6,6 +6,8 @@ import data from "./components/Products";
 import Card from "./components/Card";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
+import { ShopContextProvider } from "./ShopContext";
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
@@ -23,19 +25,21 @@ const App = () => {
   });
 
   return (
-    <Router>
-      <div>
-        <Navbar products={products} />
-        <Switch>
-          <Route exact path="/">
-            <Home products={products} />
-          </Route>
-          <Route exact path="/cart">
-            <Cart products={products}/>
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <ShopContextProvider>
+      <Router>
+        <div>
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/cart">
+              <Cart />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </ShopContextProvider>
   );
 };
 

@@ -4,15 +4,14 @@ import Cart from "./Cart";
 
 interface Props {
   children: string;
-  products: JSX.Element[];
 }
 
-const Button = ({ children, products }: Props) => {
+const Button = ({ children }: Props) => {
   const [cartVisible, setCartVisibility] = useState(false);
 
   return (
     <div>
-      {cartVisible && <Cart products={products} />}
+      {cartVisible && <Cart />}
       <button
         className="btn btn-outline-success"
         onClick={() => setCartVisibility(!cartVisible)}
