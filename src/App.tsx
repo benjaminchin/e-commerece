@@ -14,7 +14,7 @@ const App = () => {
   const products = data.map((item) => {
     return (
       <Card
-        key={item.id}
+        id={item.id}
         coverImg={item.coverImg}
         name={item.name}
         price={item.price}
@@ -31,7 +31,7 @@ const App = () => {
           <Navbar />
           <Switch>
             <Route exact path="/">
-              <Home />
+              <Home products={products}/>
             </Route>
             <Route exact path="/cart">
               <Cart />

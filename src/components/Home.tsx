@@ -1,7 +1,11 @@
 import React from "react";
 import Hero from "./Hero";
 
-const Home = () => {
+interface Props {
+  products: JSX.Element[];
+}
+
+const Home = ({products}: Props) => {
   return (
     <div>
       <Hero
@@ -9,7 +13,7 @@ const Home = () => {
         text={"SALE: Up to 70% off select T-Shirts"}
         code="Use code 'BENJAMIN' at checkout"
       />
-      <div className="products"></div>
+      <div className="products">{products}</div>
     </div>
   );
 };

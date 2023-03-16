@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ShopContext } from "../ShopContext";
 
 interface Props {
+  id: number;
   coverImg: string;
   name: string;
   price: number;
@@ -8,7 +10,10 @@ interface Props {
   reviews: number;
 }
 
-const Card = ({ coverImg, name, price, rating, reviews }: Props) => {
+const Card = ({ id, coverImg, name, price, rating, reviews }: Props) => {
+
+  const {addToCart} = useContext(ShopContext);
+
   return (
     <div className="card">
       <div className="card-body">
@@ -23,7 +28,7 @@ const Card = ({ coverImg, name, price, rating, reviews }: Props) => {
 
           <p className="product-name">{name}</p>
           <p>{`Price: ${price}`}</p>
-          <a href="#" className="btn btn-secondary">
+          <a href="#" className="btn btn-secondary" onClick={() => addToCart(id)}>
             Add to Cart
           </a>
         </div>
